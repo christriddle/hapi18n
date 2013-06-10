@@ -1,0 +1,33 @@
+{
+  "name": "hapi18n",
+  "version": "0.0.1-beta",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/gpierret/hapi18n/LICENSE-MIT"
+    }
+  ],
+  "main": "index",
+  "engines": {
+    "node": "0.8.x"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "dependencies": {
+    "hoek": "0.5.x",
+    "i18n": "*"
+  },
+  "devDependencies": {
+    "mocha": "1.x.x",
+    "chai": "1.x.x",
+    "hapi": "1.x"
+  },
+  "peerDependencies": {
+    "hapi": "1.x"
+  },
+  "keywords": [
+    "hapi",
+    "i18n"
+  ]
+}
