@@ -1,12 +1,19 @@
 {
   "name": "hapi18n",
-  "version": "0.0.1-beta",
+  "version": "0.0.1",
   "licenses": [
     {
       "type": "MIT",
       "url": "http://github.com/gpierret/hapi18n/LICENSE-MIT"
     }
   ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/gpierret/hapi18n.git"
+  },
+  "bugs": {
+    "url": "http://github.com/gpierret/hapi18n/issues"
+  },
   "main": "index",
   "engines": {
     "node": "0.8.x"
