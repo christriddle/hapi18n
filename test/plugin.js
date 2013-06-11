@@ -69,7 +69,39 @@ describe('hapi18n', function () {
     );
   });
 
-  it('can get locale from request headers', function (done) {
+  it('can get locale from query params', function (done) {
+
+    server.inject(
+      {
+        method: 'GET',
+        url: '/url?lang=en'
+      },
+      function (res) {
+        expect(res.result.locale).to.equal('en');
+        expect(res.result.msg).to.equal('Be water my friend');
+        done();
+      }
+    );
+  });
+
+  it('can get locale from host', function (done) {
+
+    server.inject(
+      {
+        method: 'GET',
+        url: '/url',
+        headers: {
+          host: 'fr.domain.com'
+        }
+      },
+      function (res) {
+        expect(res.result.locale).to.equal('fr');
+        done();
+      }
+    );
+  });
+
+  it('can get prefLocale from request headers', function (done) {
 
     server.inject(
       {
@@ -80,24 +112,7 @@ describe('hapi18n', function () {
         }
       },
       function (res) {
-        expect(res.result.locale).to.equal('cn');
         expect(res.result.prefLocale).to.equal('fr');
-        done();
-      }
-    );
-  });
-
-  it('can get locale from query params', function (done) {
-
-    server.inject(
-      {
-        method: 'GET',
-        url: '/url?lang=en'
-      },
-      function (res) {
-        expect(res.result.locale).to.equal('en');
-        expect(res.result.prefLocale).to.equal('cn');
-        expect(res.result.msg).to.equal('Be water my friend');
         done();
       }
     );
@@ -112,7 +127,6 @@ describe('hapi18n', function () {
       },
       function (res) {
         expect(res.result.locale).to.equal('fr');
-        expect(res.result.prefLocale).to.equal('cn');
         expect(res.result.msg).to.equal('Sois eau mon ami');
         done();
       }
