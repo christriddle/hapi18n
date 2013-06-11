@@ -22,8 +22,8 @@
     "test": "make test"
   },
   "dependencies": {
-    "hoek": "0.5.x",
-    "i18n": "*"
+    "lodash": "*",
+    "i18n-2": "*"
   },
   "devDependencies": {
     "mocha": "1.x.x",
