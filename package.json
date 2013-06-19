@@ -1,6 +1,6 @@
 {
   "name": "hapi18n",
-  "version": "0.0.3-beta",
+  "version": "0.0.3",
   "licenses": [
     {
       "type": "MIT",
@@ -16,7 +16,7 @@
   },
   "main": "index",
   "engines": {
-    "node": "0.8.x"
+    "node": "0.10.x"
   },
   "scripts": {
     "test": "make test"
