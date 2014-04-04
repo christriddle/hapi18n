@@ -24,24 +24,24 @@ describe('hapi18n', function () {
       method: 'GET',
       path: '/url',
       config: { plugins: { crumb: false } },
-      handler: function () {
+      handler: function (request, reply) {
 
-        expect(this.i18n).to.exist;
-        expect(this.i18n.locale).to.exist;
-        expect(this.i18n.__).to.exist;
-        expect(this.i18n.__n).to.exist;
+        expect(request.i18n).to.exist;
+        expect(request.i18n.locale).to.exist;
+        expect(request.i18n.__).to.exist;
+        expect(request.i18n.__n).to.exist;
 
-        this.reply({
-          msg: this.i18n.__(testString),
-          locale: this.i18n.locale,
-          prefLocale: this.i18n.prefLocale
+        reply({
+          msg: request.i18n.__(testString),
+          locale: request.i18n.locale,
+          prefLocale: request.i18n.prefLocale
         });
       }
     }
   ]);
 
   it('can be added as a plugin to hapi', function (done) {
-      server.pack.allow({ ext: true }).require(
+      server.pack.require(
         '../', {
           locales: ['cn', 'en', 'fr'],
           directory: __dirname + '/locales'
@@ -63,7 +63,7 @@ describe('hapi18n', function () {
       function (res) {
         expect(res.result.locale).to.equal('cn');
         expect(res.result.prefLocale).to.equal('cn');
-        expect(res.result.msg).to.equal('我 是水 我的朋友');
+        expect(res.result.msg).to.equal('是 水 我的朋友');
         done();
       }
     );
