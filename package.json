@@ -1,6 +1,6 @@
 {
   "name": "hapi18n",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "licenses": [
     {
       "type": "MIT",
@@ -26,12 +26,12 @@
     "i18n-2": "*"
   },
   "devDependencies": {
-    "mocha": "1.x.x",
-    "chai": "1.x.x",
-    "hapi": "1.x"
+    "mocha": "*",
+    "chai": "*",
+    "hapi": ">=2.x.x"
   },
   "peerDependencies": {
-    "hapi": "1.x"
+    "hapi": ">=2.x.x"
   },
   "keywords": [
     "hapi",
